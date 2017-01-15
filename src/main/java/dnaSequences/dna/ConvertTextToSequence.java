@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+package dnaSequences.dna;
 
 /**
  * Created by joe on 1/11/17.
@@ -22,3 +22,4 @@ public class ConvertTextToSequence {
         return convertedText.toUpperCase();
     }
 }
+
