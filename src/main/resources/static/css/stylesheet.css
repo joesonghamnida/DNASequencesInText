@@ -1,0 +1,31 @@
+body{
+    background-color: aliceblue;
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+}
+
+p{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 150%;
+}
+
+h3 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 200%;
+}
+
+form{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 150%;
+}
+
+#pasteBox{
+    height: 25%;
+    width: 25%;
+}
