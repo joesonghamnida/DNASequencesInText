@@ -13,6 +13,11 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class DisplayGetController {
 
+    @RequestMapping(path = "/", method = RequestMethod.GET)
+    public String home(){
+        return ("home");
+    }
+
     @RequestMapping(path="/displayResults", method = RequestMethod.GET)
     public String displayResults(HttpSession session,Model model){
         String convertedText = (String) session.getAttribute("convertedText");
@@ -21,6 +26,6 @@ public class DisplayGetController {
 
         String results = "this is for testing purposes";
         model.addAttribute("results",results);
-        return ("index");
+        return ("home");
     }
 }
