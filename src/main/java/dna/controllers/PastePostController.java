@@ -16,8 +16,7 @@ public class PastePostController {
 
     @RequestMapping(path = "/paste", method = RequestMethod.POST)
     public String pasteText(HttpSession session, String document){
-        String convertedText = document;
-        session.setAttribute("convertedText",convertedText);
+        session.setAttribute("rawText",document);
 
         return "redirect:/displayResults";
     }

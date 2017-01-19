@@ -12,7 +12,7 @@ public class DropdownPostController {
 
     @RequestMapping(path = "/dropdown", method = RequestMethod.POST)
     public String selectDocument(HttpSession session, String document){
-        session.setAttribute("document", document);
+        session.setAttribute("rawText", document);
         return "redirect:/displayResults";
     }
 }

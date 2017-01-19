@@ -17,8 +17,7 @@ public class UploadPostController {
 
     @RequestMapping(path="/upload", method = RequestMethod.POST)
     public String uploadDocument(HttpSession session, String document){
-        String convertedText = ConvertTextToSequence.convertTextToSequence(document);
-        session.setAttribute("convertedText",convertedText);
+        session.setAttribute("rawText",document);
 
         return "redirect:/displayResults";
     }

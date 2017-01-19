@@ -20,10 +20,8 @@ public class DisplayGetController {
 
     @RequestMapping(path="/displayResults", method = RequestMethod.GET)
     public String displayResults(HttpSession session,Model model){
-        String convertedText = (String) session.getAttribute("convertedText");
-
-        //TODO: modules for comparisons here
-
+        String rawText = (String) session.getAttribute("rawText");
+        
         String results = "this is for testing purposes";
         model.addAttribute("results",results);
         return ("home");
