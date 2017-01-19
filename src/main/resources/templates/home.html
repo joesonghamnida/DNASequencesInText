@@ -22,9 +22,15 @@
             </p>
         </div>
 
-        <!--<form action="/selectExample" method="post">
-            <input type=""/>
-        </form>-->
+        <form action="/dropdown" method="post">
+            <select name="document">
+                <option selected disabled>Example documents</option>
+                <option value="atlantic">Atlantic</option>
+                <option value="ibm">IBM</option>
+                <option value="loremIpsum">Lorem Ipsum</option>
+            </select>
+            <button type="submit">Choose document</button>
+        </form>
 
         <form action ="/upload" enctype="multipart/form-data" method="post">
             <input type="file" name="document"/>
