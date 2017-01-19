@@ -1,4 +1,4 @@
-package dnaSequences.dna;
+package dna.converters;
 
 /**
  * Created by joe on 1/11/17.

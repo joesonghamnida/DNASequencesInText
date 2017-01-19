@@ -27,12 +27,14 @@
         </form>-->
 
         <form action ="/upload" enctype="multipart/form-data" method="post">
-            <input type="file" name="document"/><br/>
+            <input type="file" name="document"/>
+            <br/>
             <button type="submit">Upload a document</button>
         </form>
 
-        <form id="pasteBox" action="/paste" enctype="text/plain" method="post">
-            <input type="text" name="text"/><br/>
+        <form id="pasteBox" action="/paste" method="post">
+            <input type="text" name="document"/>
+            <br/>
             <button type="submit">Submit text</button>
         </form>
 
