@@ -1,3 +1,5 @@
+import dna.tools.ReadVirusFromFile;
+import dna.tools.ReturnDocument;
 import dna.virus.Virus;
 import org.junit.Assert;
 import org.junit.Test;
@@ -5,6 +7,7 @@ import org.junit.Test;
 import dna.converters.*;
 import dna.tools.MatchSequenceSize;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Tests {
@@ -20,7 +23,7 @@ public class Tests {
     @Test
     public void matchSequenceSizeConvertedStringShorter(){
         String convertedString = "AAA";
-        Virus virus = new Virus("test", "AAAC");
+        Virus virus = new Virus("test", "AAAGTGC");
         ArrayList<Virus> viruses = new ArrayList<>();
         viruses.add(virus);
         MatchSequenceSize.matchSequenceSize(convertedString, viruses);
@@ -36,5 +39,23 @@ public class Tests {
         MatchSequenceSize.matchSequenceSize(convertedString, viruses);
         Assert.assertTrue(convertedString.length() == virus.getSequence().length());
         System.out.println(virus.getSequence());
+    }
+
+    @Test
+    public void readingVirusesFromFile()throws FileNotFoundException{
+        ArrayList<Virus> viruses = new ArrayList<>();
+        viruses = ReadVirusFromFile.readVirusFromFile();
+        Assert.assertTrue(viruses.size() == 5);
+    }
+
+    @Test
+    public void returningSelectedDocument()throws FileNotFoundException{
+        String document = "";
+        document = ReturnDocument.returnDocument("ArtificialLight.rtf");
+        Assert.assertTrue(!document.isEmpty());
+        document = ReturnDocument.returnDocument("IBM.rtf");
+        Assert.assertTrue(!document.isEmpty());
+        document = ReturnDocument.returnDocument("LoremIpsum.txt");
+        Assert.assertTrue(!document.isEmpty());
     }
 }
