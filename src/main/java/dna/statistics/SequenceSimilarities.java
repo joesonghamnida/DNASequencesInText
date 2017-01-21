@@ -20,13 +20,11 @@ public class SequenceSimilarities {
                 if(document.charAt(i) != virus.getSequence().charAt(i)){
                     discrepancies++;
                 }
-                similarity = discrepancies / document.length();
-                Result result = new Result(docName, virus.getName(), String.valueOf(similarity));
-                results.add(result);
             }
+            similarity = discrepancies / document.length();
+            Result result = new Result(docName, virus.getName(), String.valueOf(similarity));
+            results.add(result);
         }
-
         return results;
     }
-
 }
