@@ -20,11 +20,22 @@ public class MatchSequenceSize {
 
         for(Virus virus : viruses){
             if(convertedText.length() > virus.getSequence().length()){
-                String holding = "";
-                for(int i = 0; i < (convertedText.length() - virus.getSequence().length());i++){
+
+                int i = 0;
+                while(virus.getSequence().length() < convertedText.length()){
+                    String holding = "";
+                    if(i == virus.getSequence().length() - 1){
+                        i = 0;
+                    }
+                    holding = holding + virus.getSequence().toString().charAt(i);
+                    virus.setSequence(virus.getSequence() + holding);
+                    i++;
+                }
+
+                /*for(int i = 0; i < (convertedText.length() - virus.getSequence().length());i++){
                     holding = holding + virus.getSequence().toString().charAt(i);
                 }
-                virus.setSequence(virus.getSequence() + holding);
+                virus.setSequence(virus.getSequence() + holding);*/
             }
         }
     }
