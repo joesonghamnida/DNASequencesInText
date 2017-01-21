@@ -29,7 +29,7 @@ public class Tests {
 
     @Test
     public void matchSequenceSizeConvertedStringLonger(){
-        String convertedString = "AAACG";
+        String convertedString = "AAACGATTGCG";
         Virus virus = new Virus("test", "AAAC");
         ArrayList<Virus> viruses = new ArrayList<>();
         viruses.add(virus);
