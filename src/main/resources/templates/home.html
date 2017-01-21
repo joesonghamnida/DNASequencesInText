@@ -50,10 +50,11 @@
             <!-- holding pattern stuff for tests -->
             <ol>{{#results}}
                 <li>
-                    Test
-                    Document name: {{documentName}}</br>
-                    Virus name: {{virusName}}</br>
-                    Likelihood your text has a virus: {{similarity}}
+                    <p>
+                        Document name: {{documentName}}</br>
+                        Virus name: {{virusName}}</br>
+                        Likelihood your text has {{virusName}}: {{similarity}}</br>
+                    </p>
                 </li>
                 {{/results}}</ol>
         </div>
