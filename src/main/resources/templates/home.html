@@ -48,7 +48,14 @@
 
         <div id="display">
             <!-- holding pattern stuff for tests -->
-            {{#results}}{{.}}{{/results}}
+            <ol>{{#results}}
+                <li>
+                    Test
+                    Document name: {{documentName}}</br>
+                    Virus name: {{virusName}}</br>
+                    Likelihood your text has a virus: {{similarity}}
+                </li>
+                {{/results}}</ol>
         </div>
     </body>
 </html>
