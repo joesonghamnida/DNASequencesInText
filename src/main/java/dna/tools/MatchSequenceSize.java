@@ -17,12 +17,12 @@ public class MatchSequenceSize {
     public static void checkTextSequenceShorter(String convertedText, ArrayList<Virus> viruses){
         for (Virus virus : viruses) {
             if (convertedText.length() < virus.getSequence().length()) {
-                String subset = virus.getSequence().substring(0, convertedText.length() - 1);
+                String subset = virus.getSequence().substring(0, convertedText.length());
                 virus.setSequence(subset);
             }
         }
     }
-    
+
     public static void checkTextSequenceLonger(String convertedText, ArrayList<Virus> viruses){
         for (Virus virus : viruses) {
             if (convertedText.length() > virus.getSequence().length()) {
