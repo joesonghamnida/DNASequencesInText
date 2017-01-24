@@ -26,7 +26,8 @@ public class Tests {
         Virus virus = new Virus("test", "AAAGTGC");
         ArrayList<Virus> viruses = new ArrayList<>();
         viruses.add(virus);
-        MatchSequenceSize.matchSequenceSize(convertedString, viruses);
+        MatchSequenceSize.checkTextSequenceShorter(convertedString, viruses);
+        System.out.println(virus.getSequence());
         Assert.assertTrue(convertedString.length() == virus.getSequence().length());
     }
 
@@ -36,9 +37,9 @@ public class Tests {
         Virus virus = new Virus("test", "AAAC");
         ArrayList<Virus> viruses = new ArrayList<>();
         viruses.add(virus);
-        MatchSequenceSize.matchSequenceSize(convertedString, viruses);
+        MatchSequenceSize.checkTextSequenceLonger(convertedString, viruses);
         Assert.assertTrue(convertedString.length() == virus.getSequence().length());
-        System.out.println(virus.getSequence());
+        //System.out.println(virus.getSequence());
     }
 
     @Test
