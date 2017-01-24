@@ -9,33 +9,34 @@ import java.util.ArrayList;
  */
 public class MatchSequenceSize {
 
-    public static void matchSequenceSize(String convertedText, ArrayList<Virus> viruses){
+    public static void matchSequenceSize(String convertedText, ArrayList<Virus> viruses) {
+        checkTextSequenceShorter(convertedText, viruses);
+        checkTextSequenceLonger(convertedText, viruses);
+    }
 
-        for(Virus virus : viruses){
-            if(convertedText.length() < virus.getSequence().length()){
+    public static void checkTextSequenceShorter(String convertedText, ArrayList<Virus> viruses){
+        for (Virus virus : viruses) {
+            if (convertedText.length() < virus.getSequence().length()) {
                 String subset = virus.getSequence().substring(0, convertedText.length() - 1);
                 virus.setSequence(subset);
             }
         }
-
-        for(Virus virus : viruses){
-            if(convertedText.length() > virus.getSequence().length()){
+    }
+    
+    public static void checkTextSequenceLonger(String convertedText, ArrayList<Virus> viruses){
+        for (Virus virus : viruses) {
+            if (convertedText.length() > virus.getSequence().length()) {
 
                 int i = 0;
-                while(virus.getSequence().length() < convertedText.length()){
+                while (virus.getSequence().length() < convertedText.length()) {
                     String holding = "";
-                    if(i == virus.getSequence().length() - 1){
+                    if (i == virus.getSequence().length() - 1) {
                         i = 0;
                     }
                     holding = holding + virus.getSequence().toString().charAt(i);
                     virus.setSequence(virus.getSequence() + holding);
                     i++;
                 }
-
-                /*for(int i = 0; i < (convertedText.length() - virus.getSequence().length());i++){
-                    holding = holding + virus.getSequence().toString().charAt(i);
-                }
-                virus.setSequence(virus.getSequence() + holding);*/
             }
         }
     }
